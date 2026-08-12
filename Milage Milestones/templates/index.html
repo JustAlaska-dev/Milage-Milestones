@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flight Milestones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Mileage log &amp; milestone tracker</div>
+    <h1>Mileage Milestones</h1>
+    <p class="tagline">Every flight you log measured against real-world distance benchmarks — from a blue whale's annual migration loop to the average distance to the Moon.</p>
+  </header>
+
+  <section class="progress-panel" id="progressPanel">
+    <div class="progress-header">
+      <div>
+        <div class="progress-label">Total distance flown</div>
+        <div class="progress-total" id="totalKm">— km</div>
+      </div>
+      <div class="progress-next" id="nextLabel"></div>
+    </div>
+
+    <div class="route" id="route">
+      <div class="route-line"></div>
+      <div class="route-fill" id="routeFill"></div>
+      <div class="route-marker" id="routeMarker" title="Your current position">✈</div>
+      <div class="route-waypoints" id="waypoints"></div>
+    </div>
+
+    <div class="fact-card" id="factCard"></div>
+  </section>
+
+  <section class="log-panel">
+    <h2>Log a flight</h2>
+    <form id="flightForm" class="flight-form">
+      <div class="field">
+        <label for="flightDate">Date</label>
+        <input type="date" id="flightDate" required />
+      </div>
+      <div class="field">
+        <label for="departure">From</label>
+        <select id="departure" required>
+          <option value="">Select airport…</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="arrival">To</label>
+        <select id="arrival" required>
+          <option value="">Select airport…</option>
+        </select>
+      </div>
+      <div class="field field-wide">
+        <label for="notes">Notes <span class="optional">(optional)</span></label>
+        <input type="text" id="notes" placeholder="e.g. crew trip, layover in Denver" />
+      </div>
+      <button type="submit" class="submit-btn">Log flight</button>
+    </form>
+    <div class="form-status" id="formStatus"></div>
+  </section>
+
+  <section class="history-panel">
+    <h2>Flight history</h2>
+    <div id="historyList" class="history-list">
+      <div class="empty-state">No flights logged yet — add your first one above.</div>
+    </div>
+  </section>
+
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

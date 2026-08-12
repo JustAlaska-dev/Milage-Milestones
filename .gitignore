@@ -1,0 +1,11 @@
+# The actual database file — this is your personal data, not source code.
+# It gets created automatically when you run `python init_db.py`.
+flights.db
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Common editor/OS clutter
+.DS_Store
+.vscode/
